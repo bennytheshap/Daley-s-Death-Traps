@@ -1,0 +1,8 @@
+<div id="comment_<%=h comment.id %>" class="comment">
+	<strong> <%=h comment.title %> </strong> <%=h comment.created_at.strftime("%B %d, %Y - %H:%M") %>
+	<p><%=h comment.comment %></p>
+	<% for picture in comment.comment_pictures %>
+	  <%= link_to image_tag(picture.public_filename(:thumb)), picture.public_filename %>
+	<% end %>
+	
+</div>

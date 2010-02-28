@@ -1,0 +1,22 @@
+<h1>Edit Car</h1>
+
+<% form_for(@car) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :number %><br />
+    <%= f.text_field :number %>
+  </p>
+  <p>
+    <%= f.label :model_id %><br />
+    <%= collection_select :car, :model_id, @models, :id, :name %>
+  </p>
+  <p>
+    <%= f.label :year %><br />
+    <%= f.text_field :year %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+

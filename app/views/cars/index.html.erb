@@ -1,0 +1,27 @@
+<h1>All Cars</h1>
+
+<table>
+  <tr>
+    <th>Number</th>
+    <th>Model</th>
+    <th>Year</th>
+	<th>Reports</th>
+  </tr>
+
+<% @cars.each do |car| %>
+  <tr>
+    <td><%= link_to car.number, car %></td>
+    <td><%=h car.model.manufacturer.name %> <%=h car.model.name %></td>
+    <td><%=h car.year %></td>
+	<td><%=h car.comments.count %></td>
+	<% if current_user %>
+	    <td><%= link_to 'Edit', edit_car_path(car) %></td>
+	    <td><%= link_to 'Destroy', car, :confirm => 'Are you sure?', :method => :delete %></td>
+	<% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New car', new_car_path %>
