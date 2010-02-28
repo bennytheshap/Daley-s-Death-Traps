@@ -3,9 +3,10 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :models
 
+  map.connect 'cars/:id/comments/post_and_upload', :controller => 'comments', :action => 'post_and_upload'
+
   map.resources :cars
   
-  map.connect 'cars/:id/comments/post_and_upload', :controller => 'comments', :action => 'post_and_upload'
   map.resources :comments
   
   map.resource :user_session

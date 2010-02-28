@@ -17,7 +17,7 @@
 </div>
 
 <h3>Leave a Report</h5>
-	<form target="upload_frame" action="comments/post_and_upload" id="post_and_upload_form" method="post" enctype="multipart/form-data">
+	<form target="upload_frame" action="<%= car_path %>/comments/post_and_upload" id="post_and_upload_form" method="post" enctype="multipart/form-data">
 		Title: <input id="comment_title" name="comment[title]" size="30" type="text" /><br>
 	    Comment:<br>
 	    <textarea cols="35" id="comment_comment" name="comment[comment]" rows="5"></textarea><br>
